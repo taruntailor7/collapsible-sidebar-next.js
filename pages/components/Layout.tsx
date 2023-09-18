@@ -7,7 +7,7 @@ import Nvaba from './Navbar'
 import Navbar from "./Navbar";
 const Layout = (props: PropsWithChildren) => {
   const [collapsed, setSidebarCollapsed] = useState(false);
-  const [showSidebar, hideSidebar] = useState(true);
+  const [showSidebar, setShowSidebar] = useState(true);
 
   return (
     <div
@@ -28,7 +28,7 @@ const Layout = (props: PropsWithChildren) => {
         shown={showSidebar}
       />
       <div>
-        <Navbar onMenuButtonClick={() => setSidebarCollapsed((prev) => !prev)}/>
+        <Navbar onMenuButtonClick={() => setShowSidebar((prev) => !prev)}/>
         {props.children}
       </div>
     </div>
